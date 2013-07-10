@@ -5,7 +5,7 @@ idxfile = fs.readFileSync('index.html');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  response.send(indexfile);
+  response.send(idxfile);
 });
 
 var port = process.env.PORT || 5000;
