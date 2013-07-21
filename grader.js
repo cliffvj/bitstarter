@@ -1,4 +1,5 @@
-#!/usr/bin/env node
+#! /usr/bin/env node
+
 /*
 Automatically grade files for the presence of specified HTML tags/attributes.
 Uses commander.js and cheerio. Teaches command line application development
@@ -22,54 +23,58 @@ References:
 */
 
 var fs = require('fs');
-var util = require('util');
+var sys = require('sys');
+var rest = require('restler');
+var http = require('http');
 var program = require('commander');
 var cheerio = require('cheerio');
-var rest = require('restler');
-//var http = require('http');
-
 var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
-var url = "http://shielded-fjord-3933.herokuapp.com"
-var URL_DEFAULT = rest.get(url).on('complete', function(url) {
-    fs.writeFileSync("url.txt",url);});
-
-//http://shielded-fjord-3933.herokuapp.com
-
-//var URL_DEFAULT = fs.createWriteStream("url.txt");
-//var request = http.get("http://shielded-fjord-3933.herokuapp.com", function(response) {
-//    response.pipe(URL_DEFAULT); });
-
-//URL_DEFAULT = "url.txt"
-
+var URL_DEFAULT = "http://shielded-fjord-3933.herokuapp.com";
 
 var assertFileExists = function(infile) {
     var instr = infile.toString();
-    if(!(fs.existsSync(instr))) {
+    if(!fs.existsSync(instr)) {
         console.log("%s does not exist. Exiting.", instr);
         process.exit(1); // http://nodejs.org/api/process.html#process_process_exit_code
     }
     return instr;
 };
 
-/*var assertURLExists = function(infile) {
-    var instr = infile;
-    if(!(fs.existsSync(instr))) {
-        console.log("%s does not exist. Exiting.", instr);
-        process.exit(1); // http://nodejs.org/api/process.html#process_process_exit_code
-    }
+var assertURLExists = function(infile) {
+    rest.get(infile).on('complete', function(result) { fs.writeFileSync("myfile.html", result);});
+    var infile2 = "myfile.html";
+    var instr = infile2.toString();
+
+// Removing File Not Exist Portion
+//#####################################
+//       if(!fs.existsSync(instr)) {
+//           console.log("%s does not exist. Exiting.", infile);
+//           process.exit(1); // http://nodejs.org/api/process.html#process_process_exit_code
+//       }
+//#####################################
+   return instr;
+};
+
+
+//###Another asserURLExist Version####
+/*
+var assertURLExists = function(infile) { 
+    var instr = rest.get(infile).on('complete', function(result) { sys.puts(result);});
     return instr;
 };
 */
+//#####################################
 
 var cheerioHtmlFile = function(htmlfile) {
     return cheerio.load(fs.readFileSync(htmlfile));
 };
 
-//var cheerioURLFile = function(urlfile) {
-//    return cheerio.load(fs.readFileSync(urlfile));
+var cheerioURL = function(url) { 
+    return cheerio.load(url);
+};
 
-//};
+
 var loadChecks = function(checksfile) {
     return JSON.parse(fs.readFileSync(checksfile));
 };
@@ -85,10 +90,9 @@ var checkHtmlFile = function(htmlfile, checksfile) {
     return out;
 };
 
-/**************************
-var checkURLFile = function(urlfile, checksfile) {
-    $ = cheerioURLFile(urlfile);
-    var checks = loadChecks(checksfile).sort();
+var checkURL = function(url, checkURL) {
+    $ = cheerioURL(url);
+    var checks = loadChecks(checkURL).sort();
     var out = {};
     for(var ii in checks) {
         var present = $(checks[ii]).length > 0;
@@ -96,7 +100,8 @@ var checkURLFile = function(urlfile, checksfile) {
     }
     return out;
 };
-**************************/
+
+
 var clone = function(fn) {
     // Workaround for commander.js issue.
     // http://stackoverflow.com/a/6772648
@@ -106,21 +111,27 @@ var clone = function(fn) {
 if(require.main == module) {
     program
         .option('-c, --checks <checkfile>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
+        .option('-u, --url <url>', 'Path to url', clone(assertURLExists), URL_DEFAULT)
         .option('-f, --file <htmlfile>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
-//	.option('-u, --url <url>', 'Path to check URL', clone(assertURLExists), URL_DEFAULT)
         .parse(process.argv);
-//    if (process.argv = 'f' || '--file') 
-//    {
-    var checkJson = checkHtmlFile(program.file, program.checks);
-//    }
 
-//    if (process.argv = '-u' || '--url') 
-//    
-//     var checkJson = checkURLFile(program.file, program.checks);
-//    }
-    var outJson = JSON.stringify(checkJson, null, 4);
-    console.log(outJson);
-}   else { 
-    exports.checkHtmlFile = checkHtmlFile;
-//    exports.checkURLFile = checkURLFile;
+        if (program.optiom === '-u' || '--url') {
+          var checkJson = checkURL(program.url, program.checks);  
+          var outJson = JSON.stringify(checkJson, null, 4);
+        }        
+        
+        if (program.option === '-f' || '--file') {
+          var checkJson = checkHtmlFile(program.file,program.checks);
+          var outJson = JSON.stringify(checkJson, null, 4);
+        }
+        console.log(outJson);
+        fs.unlink("./myfile.html", function(err) { console.log("");});
 }
+
+//exports.checkHtmlFile = checkHtmlFile;
+//exports.checkURL = checkURL;
+        
+
+
+
+
