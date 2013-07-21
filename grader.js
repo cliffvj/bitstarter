@@ -45,26 +45,8 @@ var assertURLExists = function(infile) {
     rest.get(infile).on('complete', function(result) { fs.writeFileSync("myfile.html", result);});
     var infile2 = "myfile.html";
     var instr = infile2.toString();
-
-// Removing File Not Exist Portion
-//#####################################
-//       if(!fs.existsSync(instr)) {
-//           console.log("%s does not exist. Exiting.", infile);
-//           process.exit(1); // http://nodejs.org/api/process.html#process_process_exit_code
-//       }
-//#####################################
-   return instr;
-};
-
-
-//###Another asserURLExist Version####
-/*
-var assertURLExists = function(infile) { 
-    var instr = rest.get(infile).on('complete', function(result) { sys.puts(result);});
     return instr;
 };
-*/
-//#####################################
 
 var cheerioHtmlFile = function(htmlfile) {
     return cheerio.load(fs.readFileSync(htmlfile));
@@ -128,8 +110,6 @@ if(require.main == module) {
         fs.unlink("./myfile.html", function(err) { console.log("");});
 }
 
-//exports.checkHtmlFile = checkHtmlFile;
-//exports.checkURL = checkURL;
         
 
 
