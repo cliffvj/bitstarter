@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<!-- saved from url=(0070)https://spark-public.s3.amazonaws.com/startup/code/bitstarter-hw4.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+CTYPE html>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <title>My First Bitstarter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
     <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">    
-    <script src="./index_files/startup-code-jquery.js"></script>
-    <script src="./index_files/startup-code-bootstrap.js"></script>
-    <link href="./index_files/css" rel="stylesheet" type="text/css">
-    <link href="./index_files/css(1)" rel="stylesheet" type="text/css">
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" 
+          rel="stylesheet" type="text/css">
     <style type="text/css">
 
       /* Large desktop */
@@ -97,25 +98,26 @@
         color: #ccccff;
       }
     </style>
-  <script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/document_iterator.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/find_proxy.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/get_html_text.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/global_constants.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/name_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/number_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/menu_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/string_finder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/change_sink.js"></script><meta name="document_iterator.js"><meta name="find_proxy.js"><meta name="get_html_text.js"><meta name="global_constants.js"><meta name="change_sink.js"><meta name="number_injection_builder.js"><meta name="string_finder.js"><meta name="menu_injection_builder.js"><meta name="name_injection_builder.js"></head>
-  <body style="">
+  </head>
+  <body>
 
     <!-- Mobile-friendly navbar adapted from example. -->
     <!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <button type="button" class="btn btn-navbar"
+                  data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="https://spark-public.s3.amazonaws.com/startup/code/bitstarter-hw4.html#">Bitstarter</a>
+          <a class="brand" href="#">Bitstarter</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="https://spark-public.s3.amazonaws.com/startup/code/bitstarter-hw4.html#">Home</a></li>
-              <li><a href="https://spark-public.s3.amazonaws.com/startup/code/bitstarter-hw4.html#about">About</a></li>
-              <li><a href="https://spark-public.s3.amazonaws.com/startup/code/bitstarter-hw4.html#contact">Contact</a></li>
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -131,25 +133,26 @@
       <!-- www.google.com/fonts/specimen/Ubuntu#pairings -->
       <div class="row-fluid heading">
         <div class="span12">
-          <h1>BUCK SLIDER</h1>
+          <h1>BUCK SLIDER: Development Version</h1>
         </div>
       </div> 
       <div class="row-fluid subheading">
         <div class="span12">
           <!-- Special typography from Bootstrap for lead paragraph. -->
           <!-- http://twitter.github.io/bootstrap/base-css.html#typography -->
-          <p class="lead">Something about saving a buck..</p>
+          <p class="lead">Something about saving a buck</p>
         </div>
       </div>
       <div class="row-fluid pitch">
         <div class="span5 offset1 video">
-          <img class="img-polaroid" src="http://www.mgscomm.com/wp-content/uploads/2013/05/bbt-ticker-banner__ft-480x300.jpg">
+          <img class="img-polaroid" alt="Placeholder" src="http://placehold.it/480x300">
         </div>
 
         <!-- We define a new 'actions' div to contain statistics, order, and share buttons.-->
         <div class="span5 actions">
+          <div class="row-fluid">
           <div class="span8 offset2">
-            <div class="statistics">
+            <div class="row-fluid statistics">
               <div class="span4">
                 <!-- linediv-l and linediv-r give dividing lines that look
                 different in horizontal and vertical layouts, illustrating
@@ -160,16 +163,17 @@
               </div>
               <div class="span4">
                 <div class="linediv-c">
-                  <h3>$7000</h3> <p>of $15,000</p>
+                  <h3>$6000</h3> <p>of $10,000</p>
                 </div>
               </div>
               <div class="span4">
                 <div class="linediv-r">
-                <h3>30</h3> <p>days left</p>
+                <h3>10</h3> <p>days left</p>
                 </div>
               </div>
             </div>
           </div>
+          <div class="row-fluid">
           <div class="span10 offset1">
             <!-- Bootstrap progress bar -->
             <!-- http://twitter.github.io/bootstrap/components.html#progress -->
@@ -178,17 +182,23 @@
               <div class="bar bar-warning" style="width: 40%;"></div>
             </div>
           </div>
+          </div>
+          <div class="row-fluid">
           <div class="span6 offset3 order">
             <!-- Standard Bootstrap button. -->
             <!-- http://twitter.github.io/bootstrap/base-css.html#buttons -->
             <button class="btn btn-success btn-large">Preorder</button>
           </div>
+          </div>
+          <div class="row-fluid">
           <div class="span8 offset2 social">
             <!-- Social buttons are not included in default Bootstrap. -->
             <!-- See: http://noizwaves.github.io/bootstrap-social-buttons -->
             <button class="btn btn-twitter"><i class="icon-twitter"></i> | Twitter</button>
             <button class="btn btn-facebook"><i class="icon-facebook"></i> | Facebook</button>
           </div>
+          </div>
+        </div>
         </div>
       </div>
 
@@ -198,11 +208,21 @@
       <!-- http://placehold.it -->
       <div class="row-fluid section1">
         <div class="span5 offset1 asset">
-          <img class="img-polaroid" src="http://placehold.it/480x300">
+          <img class="img-polaroid"  alt="Placeholder" src="http://placehold.it/480x300">
         </div>
         <div class="span5 copy">
           <p>
-            Quisque dictum lorem eget metus gravida, sed pulvinar orci vestibulum. Aliquam et aliquam ante. Proin congue dolor vitae convallis hendrerit. Pellentesque aliquet eu nunc ac mattis. Aliquam in tortor vel eros euismod sodales. Nam ultrices tortor sed blandit consectetur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque ligula tellus, lobortis a placerat eu, pharetra eu justo. In vitae viverra sem. Maecenas malesuada ante placerat, dapibus neque quis, tincidunt diam. Sed sed magna felis. Vivamus pulvinar convallis diam eu rutrum.
+            Quisque dictum lorem eget metus gravida, sed pulvinar. Donec
+            Aliquam et aliquam ante. Proin congue dolor vitae convalli, eu
+            mollis justo velit at nunc. Fusce nec egestas sem. Donec
+            fringilla ante lectus, a pellentesque lacus dignissim ac. Sed
+            volutpat lorem ut congue malesuada. In facilisis scelerisque
+            turpis sed lacinia. Donec in orci lectus. Donec auctor semper
+            quam, eget rhoncus purus fringilla id. Phasellus id nibh eu
+            risus ultrices adipiscing.  Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Donec porta, dui sagittis hendrerit
+            rutrum, nunc leo tempus nisl, eu mollis justo velit at
+            nunc. Vivamus pulvinar convallis diam rutru.
           </p>
         </div>
       </div>
@@ -210,11 +230,21 @@
       <div class="row-fluid section2">
         <div class="span5 offset1 copy copy-right">
           <p>
-Suspendisse ac erat eros. Fusce enim nibh, venenatis sed ante nec, volutpat placerat purus. Sed rutrum consectetur tortor eu ornare. Nam laoreet diam sapien, quis euismod massa cursus blandit. Curabitur quis vulputate velit, et rhoncus nibh. Suspendisse orci ligula, mollis eget velit id, tempor cursus nisl. Phasellus eget iaculis nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse facilisis augue eu mi pulvinar aliquet.
+            Quisque dictum lorem eget metus gravida, sed pulvinar. Donec
+            Aliquam et aliquam ante. Proin congue dolor vitae convalli, eu
+            mollis justo velit at nunc. Fusce nec egestas sem. Donec
+            fringilla ante lectus, a pellentesque lacus dignissim ac. Sed
+            volutpat lorem ut congue malesuada. In facilisis scelerisque
+            turpis sed lacinia. Donec in orci lectus. Donec auctor semper
+            quam, eget rhoncus purus fringilla id. Phasellus id nibh eu
+            risus ultrices adipiscing.  Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Donec porta, dui sagittis hendrerit
+            rutrum, nunc leo tempus nisl, eu mollis justo velit at
+            nunc. Vivamus pulvinar convallis diam rutru.
           </p>
         </div>
         <div class="span5 asset">
-          <img class="img-polaroid" src="http://www.mgscomm.com/wp-content/uploads/2013/05/bbt-ticker-banner__ft-480x300.jpg">
+          <img class="img-polaroid"  alt="Placeholder" src="http://placehold.it/480x300">
         </div>
       </div>
 
@@ -227,7 +257,8 @@ Suspendisse ac erat eros. Fusce enim nibh, venenatis sed ante nec, volutpat plac
             <div class="accordion" id="accordion2">
               <div class="accordion-group">
                 <div class="accordion-heading">
-                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="https://spark-public.s3.amazonaws.com/startup/code/bitstarter-hw4.html#collapseOne">
+                  <a class="accordion-toggle" data-toggle="collapse"
+                     data-parent="#accordion2" href="#collapseOne">
                     What does FAQ stand for?
                   </a>
                 </div>
@@ -239,7 +270,8 @@ Suspendisse ac erat eros. Fusce enim nibh, venenatis sed ante nec, volutpat plac
               </div>
               <div class="accordion-group">
                 <div class="accordion-heading">
-                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="https://spark-public.s3.amazonaws.com/startup/code/bitstarter-hw4.html#collapseTwo">
+                  <a class="accordion-toggle" data-toggle="collapse"
+                     data-parent="#accordion2" href="#collapseTwo">
                     What's a Frequently Asked Question?
                   </a>
                 </div>
@@ -266,6 +298,7 @@ Suspendisse ac erat eros. Fusce enim nibh, venenatis sed ante nec, volutpat plac
         </div>
       </div>
     </div>
-  
+  </body>
+</html>
 
-<div class="chext-container chext-container-vertical chext-hwt-ime notranslate" tabindex="-1" style="display: none; -webkit-user-select: none; left: 2px; top: 2px;"><canvas class="chext-hwt-canvas" width="425" height="194" style="-webkit-user-select: none;"></canvas><div class="chext-kd-img chext-hwt-close" style="-webkit-user-select: none;"></div><div class="chext-kd-img chext-hwt-grip" style="-webkit-user-select: none;"></div><div class="chext-hwt-candidates" style="-webkit-user-select: none;"><div class="chext-hwt-candidate chext-hwt-selected">,</div><div class="chext-hwt-candidate">.</div><div class="chext-hwt-candidate">?</div><div class="chext-hwt-candidate">!</div><div class="chext-hwt-candidate">:</div><div class="chext-hwt-candidate">'</div><div class="chext-hwt-candidate">"</div><div class="chext-hwt-candidate">;</div><div class="chext-hwt-candidate">@</div></div><div class="chext-hwt-buttons" style="-webkit-user-select: none;"><div class="chext-hwt-space chext-hwt-button chext-hwt-jfk chext-hwt-jfk-standard" style="-webkit-user-select: none;"></div><div class="chext-hwt-enter chext-hwt-button chext-hwt-jfk chext-hwt-jfk-standard" style="-webkit-user-select: none;"><div class="chext-hwt-enter-img chext-hwt-enter-img-dark chext-kd-img" style="-webkit-user-select: none;"></div></div><div class="chext-hwt-backspace chext-hwt-button chext-hwt-jfk chext-hwt-jfk-standard" style="-webkit-user-select: none;"><div class="chext-hwt-backspace-img chext-kd-img" style="-webkit-user-select: none;"></div></div></div></div><div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;" input="" input_stat="{}"></div></body><span id="skype_highlighting_settings" display="none" autoextractnumbers="1"></span><object id="skype_plugin_object" location.href="https://spark-public.s3.amazonaws.com/startup/code/bitstarter-hw4.html" location.hostname="spark-public.s3.amazonaws.com" width="0" height="0" type="application/x-vnd.skype.click2call.chrome.5.7.0" style="position: absolute; visibility: hidden; left: -100px; top: -100px;"></object></html>
+
